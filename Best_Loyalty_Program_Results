@@ -1,0 +1,10 @@
+SELECT
+Branch,   --Lists each branch
+COUNT(Customer_type) AS member_count,    --Counts the amount of members in each branch
+ROUND(SUM(Total),2) As Total            --Gets Total Revenue from members from each branch 
+FROM
+`case-study-one-367702.supermarket_sales.supermarket`
+WHERE
+Customer_type = "Member"       --Filters out all normal customer transactions
+GROUP BY
+Branch
