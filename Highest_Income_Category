@@ -1,0 +1,11 @@
+SELECT
+Product_line,      --The product lines
+ROUND(Sum(Total),2) AS Revenue, --The total revenue rounded to two decimal digits
+ROUND(SUM(cogs),2) AS Cost_of_Goods,  --The total cost of goods rounded to two decimal digits
+ROUND(Sum(gross_income),2) AS Gross_income  --The total gross income rounded to two decimal digits
+FROM
+`case-study-one-367702.supermarket_sales.supermarket`
+GROUP BY
+Product_line    --Groups each product line
+ORDER BY
+Gross_income DESC  --Orders gross income from highest to lowest
