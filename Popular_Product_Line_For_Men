@@ -1,0 +1,11 @@
+SELECT
+Product_line,  --Product Line
+SUM(Quantity) AS Product_Purchases  --Counts the amount of items from each product line were purchased
+FROM
+`case-study-one-367702.supermarket_sales.supermarket`
+WHERE
+Gender = "Male"    --Filters to only account for purchases made by men
+GROUP BY
+Product_line     --Groups product lines together
+Order BY
+Product_Purchases DESC  --Orders product pruchases from most purchased to least purchased
