@@ -1,0 +1,15 @@
+SELECT
+Gender,           
+ROUND(AVG(Rating),2) avg_rating,   --Getting the average rating by gender
+ROUND(AVG(gross_income),2) AS avg_income_from_gender,    --Gets the average gross income by gender
+Round(SUM(Total),2) AS Total_Revenue_from_gender,     --Gets the sum of revenue by gender
+SUM(Quantity) AS items_purchased,                 --Gets the total amount of items purchased by gender
+Count(Customer_type) AS member_count            --Counts the number of members by gender
+
+FROM
+`case-study-one-367702.supermarket_sales.supermarket`
+
+WHERE
+Customer_type = "Member"    --Filters out normal shoppers
+GROUP BY
+Gender  --Groups the columns by gender
