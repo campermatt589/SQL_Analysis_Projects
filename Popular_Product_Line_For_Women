@@ -1,0 +1,12 @@
+SELECT
+Product_line, --Product line
+Count(Product_line) AS total_tansactions, --Counts the amount of transactions 
+SUM(Quantity) AS Product_Purchases_Total --The total amount of items bought in the product line
+FROM
+`case-study-one-367702.supermarket_sales.supermarket`
+WHERE
+Gender = "Female"     --Filters out all transactions that are not made by women
+GROUP By
+Product_line     --Groups each product line
+Order BY
+Product_Purchases_Total DESC  --Orders purchases by most purchased to least purchased
