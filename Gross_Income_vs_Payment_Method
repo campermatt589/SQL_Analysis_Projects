@@ -1,0 +1,7 @@
+SELECT
+ROUND(AVG(gross_income),2) AS Avg_Gross_Income,  --Average gross income rounded to 2 decimal digits
+Payment                                          --Payment methods
+FROM
+`case-study-one-367702.supermarket_sales.supermarket`
+GROUP BY
+Payment
