@@ -1,0 +1,7 @@
+SELECT
+Customer_type,    --Customer Type
+ROUND(AVG(gross_income),2) AS avg_gross_income    --The average gross income rounded to 2 digits
+FROM
+`case-study-one-367702.supermarket_sales.supermarket`
+GROUP BY
+Customer_type    --Group by customer type
