@@ -1,0 +1,9 @@
+SELECT
+Customer_type,   --Customer type, normal or member
+AVG(Rating) AS Avg_Rating    --Gets the average rating per customer type
+FROM
+`case-study-one-367702.supermarket_sales.supermarket`
+GROUP BY
+Customer_type    --Groups the average rating by customer
+ORDER BY
+Customer_type DESC 
