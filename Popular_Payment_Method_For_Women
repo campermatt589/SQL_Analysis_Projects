@@ -1,0 +1,11 @@
+SELECT
+Payment,                  --Payment method
+Count(Payment) AS Popular_method   --The amount of times the payment method was used
+FROM
+`case-study-one-367702.supermarket_sales.supermarket`
+WHERE
+Gender = "Female"   --Query only considers transactions by females
+GROUP BY
+Payment              --Groups query by payment method
+ORDER BY
+Popular_method DESC  --Orders the payment method from most used to least used
