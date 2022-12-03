@@ -1,0 +1,11 @@
+SELECT
+CASE --Checks when a transaction was conducted
+  WHEN Time >= '00:00' AND Time < '12:00' THEN 'Morning Customer'
+  WHEN Time >= '12:00' AND Time < '18:00' THEN 'Afternoon Customer'
+  ELSE 'Evening Customer'
+  END AS Customer_Visit_Times,
+COUNT(Time) As Visit_Count --Counts the amount of times a transaction was conducted at a particular time
+FROM
+`case-study-one-367702.supermarket_sales.supermarket`
+GROUP BY
+1
