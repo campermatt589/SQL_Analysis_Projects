@@ -1,0 +1,11 @@
+SELECT
+Title,   --Gets the title, ID, comments, and likes 
+Video_ID,
+Comments,
+Likes
+FROM
+`youtube-stats-project-371421.video_stats.video-stats`
+ORDER BY
+Likes DESC   --Orders the query from most liked video to least
+LIMIT 
+1
