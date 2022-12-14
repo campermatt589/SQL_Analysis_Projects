@@ -1,0 +1,7 @@
+SELECT
+Comment,  --Queries for Comments and Likes
+Likes
+FROM
+`youtube-stats-project-371421.comments.video_comments` AS comments
+ORDER BY
+Likes DESC --Orders Likes to get the most liked comment at the top
