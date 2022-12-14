@@ -1,7 +1,11 @@
 SELECT
-Comment,  --Queries for Comments and Likes
-Likes
+stats.Title,  --Gets thw title of the Video from the stats table
+comments.Comment,  --Gets the specific comment from the comments table
+comments.Likes --Likes exist in comments and stats table. Use comments.Likes to avoid ambiguity
 FROM
-`youtube-stats-project-371421.comments.video_comments` AS comments
+`youtube-stats-project-371421.comments.video_comments` AS comments 
+INNER JOIN
+`youtube-stats-project-371421.video_stats.video-stats` AS stats ON comments.Video_ID = stats.Video_ID -- Use the Left Join to get the Title of the video and match the Video_ID from both tables. 
 ORDER BY
-Likes DESC --Orders Likes to get the most liked comment at the top
+Likes DESC --We want the most liked comment so we order likes in descending order
+
