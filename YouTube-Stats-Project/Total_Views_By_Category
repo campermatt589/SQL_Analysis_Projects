@@ -1,0 +1,9 @@
+SELECT
+Keyword,  --Queries for keyword and the sum of views
+SUM(Views) AS Total_Views
+FROM
+`youtube-stats-project-371421.video_stats.video-stats`
+GROUP BY
+Keyword  --The keyword is grouped to show the sum of views
+ORDER BY
+Total_Views DESC --Total views is ordered from most to least
