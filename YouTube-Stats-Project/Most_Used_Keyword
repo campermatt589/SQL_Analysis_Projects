@@ -1,0 +1,12 @@
+SELECT
+Keyword,   --Finds the most popular Keyword and counts the amount of times used
+Count(Keyword) AS keywords_used
+FROM
+`youtube-stats-project-371421.video_stats.video-stats`
+--WHERE 
+--Keyword = "google"
+--The WHERE clause would be used to determine how many times companies were found in the keyword categories. The example give in google, shows up 45 times in the keyword categories
+GROUP BY
+Keyword
+ORDER BY
+keywords_used DESC --Gets the amount of times a keyword was used
