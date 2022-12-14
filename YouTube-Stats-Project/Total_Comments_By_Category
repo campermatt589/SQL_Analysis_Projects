@@ -1,0 +1,9 @@
+SELECT
+Keyword,   --Gets total amount of comments per keyword
+SUM(Comments) AS Total_Comments
+FROM
+`youtube-stats-project-371421.video_stats.video-stats`
+GROUP BY
+Keyword  --Groups by keyword
+ORDER BY  
+Total_Comments DESC  --Orders sum of comments from most to least
