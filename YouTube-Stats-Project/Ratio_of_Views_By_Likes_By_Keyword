@@ -1,6 +1,8 @@
 SELECT
 Keyword,
-SUM(Views)/SUM(Likes) AS Views_Likes_Ratio  --Gets the ratio of views by likes by keyword
+SUM(Views)/SUM(Likes) AS Views_Likes_Ratio,  --Gets the ratio of views by likes by keyword
+(SELECT
+SUM(Views)/SUM(Likes) FROM `youtube-stats-project-371421.video_stats.video-stats`) AS Ratio_By_Video --Gets the ratio of views per like per video
 FROM
 `youtube-stats-project-371421.video_stats.video-stats`
 GROUP BY
