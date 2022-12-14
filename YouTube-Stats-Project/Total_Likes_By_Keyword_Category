@@ -1,0 +1,9 @@
+SELECT
+Keyword, --Gets total likes by keyword
+SUM(Likes) AS Total_Likes
+FROM
+`youtube-stats-project-371421.video_stats.video-stats`
+GROUP BY
+Keyword
+ORDER BY
+Total_Likes DESC --Orders query from most likes to least likes
