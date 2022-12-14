@@ -1,0 +1,9 @@
+SELECT
+Keyword,
+AVG(Sentiment) AS Avg_Sentiment_Score
+FROM
+`youtube-stats-project-371421.comments.video_comments` AS comments
+INNER JOIN
+`youtube-stats-project-371421.video_stats.video-stats` AS stats ON comments.Video_ID = stats.Video_ID
+GROUP BY
+Keyword
